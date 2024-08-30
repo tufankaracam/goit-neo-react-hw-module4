@@ -109,9 +109,11 @@ function App() {
 
   return (
     <>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        <ImageModal photo={activePhoto} />
-      </Modal>
+      <ImageModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        photo={activePhoto}
+      />
       <Toaster position="top-right" />
       <SearchBar searchPhotos={searchPhotos} />
 

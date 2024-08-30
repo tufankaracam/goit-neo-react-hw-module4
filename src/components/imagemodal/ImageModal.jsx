@@ -1,13 +1,15 @@
 import styles from "./imagemodal.module.css";
-
-export default function ImageModal({ photo }) {
+import Modal from "react-modal";
+export default function ImageModal({ photo, isOpen, onRequestClose }) {
   return (
-    <div className={styles.container}>
-      <img
-        className={styles.image}
-        src={photo?.urls?.regular}
-        alt={photo?.alt_description}
-      />
-    </div>
+    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+      <div className={styles.container}>
+        <img
+          className={styles.image}
+          src={photo?.urls?.regular}
+          alt={photo?.alt_description}
+        />
+      </div>
+    </Modal>
   );
 }
